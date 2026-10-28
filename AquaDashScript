@@ -1,0 +1,218 @@
+-- Decompiled from MoonSec V3 (bytecode -> unluac -> beautifier)
+
+local v, v2
+function v()
+    local button, humanoid, num, track, v3, v4, v5, v6
+    button = "ScreenGui"
+    local parent = Instance.new(button)
+    parent.Name = "CustomButtonGui"
+    parent.ResetOnSpawn = false
+    button = game
+    button = button.Players
+    button = button.LocalPlayer
+    local v7 = button
+    button = button.WaitForChild
+    button = button(v7, "PlayerGui")
+    parent.Parent = button
+    button = Instance
+    button = button.new
+    button = button("TextButton")
+    button.Name = "DashButton"
+    humanoid = 70
+    button.Size = UDim2.new(0, 200, 0, humanoid)
+    humanoid = 0
+    button.Position = UDim2.new(0.8, 0, 0.7, humanoid)
+    button.AnchorPoint = Vector2.new(0.5, 0.5)
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    button.BorderSizePixel = 0
+    button.Text = "Dash"
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.Font = Enum.Font.Bangers
+    button.TextSize = 45
+    button.Parent = parent
+    button.TextTransparency = 0.2
+    button.BackgroundTransparency = 0.2
+    local uICorner = Instance.new("UICorner")
+    uICorner.CornerRadius = UDim.new(0, 10)
+    uICorner.Parent = button
+    local uIStroke = Instance.new("UIStroke")
+    humanoid = 128
+    num = 128
+    uIStroke.Color = Color3.fromRGB(128, humanoid, num)
+    uIStroke.Thickness = 2
+    uIStroke.Parent = button
+    local localPlayer = game.Players.LocalPlayer
+    local character2 = localPlayer.Character
+    if not character2 then
+        local characterAdded = localPlayer.CharacterAdded
+        humanoid = characterAdded
+        character2 = characterAdded.Wait(humanoid)
+    end
+    num = character2
+    humanoid = character2.WaitForChild
+    track = "Humanoid"
+    humanoid = humanoid(num, track)
+    num = true
+    track = nil
+    function v3()
+        local animation = Instance.new("Animation")
+        animation.AnimationId = "rbxassetid://18537367238"
+        local track2 = humanoid:LoadAnimation(animation)
+        track2:Play()
+        track2:AdjustSpeed(2.1)
+        track = track2
+    end
+    function v4()
+        if track then
+            track:Stop()
+            track = nil
+        end
+    end
+    function v5()
+        local walkSpeed = humanoid.WalkSpeed
+        humanoid.WalkSpeed = 54
+        task.wait(0.37)
+        humanoid.WalkSpeed = walkSpeed
+        v4()
+    end
+    function v6()
+        local TweenService = game:GetService("TweenService")
+        local tween = TweenService:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 220, 0, 80), TextSize = 50})
+        tween:Play()
+        tween.Completed:Wait()
+        local tween2 = TweenService:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Size = UDim2.new(0, 180, 0, 60), TextSize = 40})
+        tween2:Play()
+        tween2.Completed:Wait()
+        TweenService:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 200, 0, 70), TextSize = 45}):Play()
+    end
+    button.MouseButton1Click:Connect(function()
+        if num then
+            if 0 < humanoid.MoveDirection.Magnitude then
+                num = false
+                v3()
+                v5()
+                v6()
+                print("R15 Dash button clicked!")
+                task.wait(0.08)
+                num = true
+            end
+        end
+    end)
+end
+function v2()
+    local button, humanoid, num, str, v3, v4
+    button = "ScreenGui"
+    local parent = Instance.new(button)
+    parent.Name = "CustomButtonGui"
+    parent.ResetOnSpawn = false
+    button = game
+    button = button.Players
+    button = button.LocalPlayer
+    local v5 = button
+    button = button.WaitForChild
+    button = button(v5, "PlayerGui")
+    parent.Parent = button
+    button = Instance
+    button = button.new
+    button = button("TextButton")
+    button.Name = "DashButton"
+    humanoid = 70
+    button.Size = UDim2.new(0, 200, 0, humanoid)
+    humanoid = 0
+    button.Position = UDim2.new(0.8, 0, 0.7, humanoid)
+    button.AnchorPoint = Vector2.new(0.5, 0.5)
+    button.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    button.BorderSizePixel = 0
+    button.Text = "Dash"
+    button.TextColor3 = Color3.fromRGB(255, 255, 255)
+    button.Font = Enum.Font.Bangers
+    button.TextSize = 45
+    button.Parent = parent
+    button.TextTransparency = 0.2
+    button.BackgroundTransparency = 0.2
+    local uICorner = Instance.new("UICorner")
+    uICorner.CornerRadius = UDim.new(0, 10)
+    uICorner.Parent = button
+    local uIStroke = Instance.new("UIStroke")
+    humanoid = 128
+    num = 128
+    uIStroke.Color = Color3.fromRGB(128, humanoid, num)
+    uIStroke.Thickness = 2
+    uIStroke.Parent = button
+    local localPlayer = game.Players.LocalPlayer
+    local character2 = localPlayer.Character
+    if not character2 then
+        local characterAdded = localPlayer.CharacterAdded
+        humanoid = characterAdded
+        character2 = characterAdded.Wait(humanoid)
+    end
+    num = character2
+    humanoid = character2.WaitForChild
+    str = "Humanoid"
+    humanoid = humanoid(num, str)
+    num = true
+    function str()
+        local animation = Instance.new("Animation")
+        animation.AnimationId = "rbxassetid://242455877"
+        local track = humanoid:LoadAnimation(animation)
+        track:Play()
+        track:AdjustSpeed(2.1)
+        return track
+    end
+    function v3()
+        local walkSpeed = humanoid.WalkSpeed
+        humanoid.WalkSpeed = 70
+        task.wait(0.2)
+        humanoid.WalkSpeed = walkSpeed
+    end
+    function v4()
+        local TweenService = game:GetService("TweenService")
+        local tween = TweenService:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 220, 0, 80), TextSize = 50})
+        tween:Play()
+        tween.Completed:Wait()
+        local tween2 = TweenService:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.In), {Size = UDim2.new(0, 180, 0, 60), TextSize = 40})
+        tween2:Play()
+        tween2.Completed:Wait()
+        TweenService:Create(button, TweenInfo.new(0.1, Enum.EasingStyle.Quad, Enum.EasingDirection.Out), {Size = UDim2.new(0, 200, 0, 70), TextSize = 45}):Play()
+    end
+    button.MouseButton1Click:Connect(function()
+        if num then
+            num = false
+            local v6 = str()
+            v3()
+            if v6.IsPlaying then
+                v4()
+            end
+            print("R6 Dash button clicked!")
+            task.wait(0.21)
+            num = true
+        end
+    end)
+end
+game.Players.LocalPlayer.CharacterAdded:Connect(function()
+    local localPlayer = game.Players.LocalPlayer
+    local character2 = localPlayer.Character
+    if not character2 then
+        character2 = localPlayer.CharacterAdded:Wait()
+    end
+    local humanoid = character2:WaitForChild("Humanoid")
+    local customButtonGui = localPlayer.PlayerGui:FindFirstChild("CustomButtonGui")
+    if customButtonGui then
+        customButtonGui:Destroy()
+    end
+    task.wait(0.5)
+    if humanoid.RigType == Enum.HumanoidRigType.R15 then
+        v()
+    else
+        v2()
+    end
+end)
+local character = game.Players.LocalPlayer.Character
+if not character then
+    character = game.Players.LocalPlayer.CharacterAdded:Wait()
+end
+if character:WaitForChild("Humanoid").RigType == Enum.HumanoidRigType.R15 then
+    v()
+else
+    v2()
+end
